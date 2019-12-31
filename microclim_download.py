@@ -1,5 +1,4 @@
 """ downloads Microclim dataset by Michael Kearney, Andrew Paul Isaac, Warren Paul Porter"""
-
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -46,11 +45,14 @@ def auto_downloads():
     links = getListofLinks()
     
     for i in links:
+        print('Downloading from: ', i)
         driver.get(i)
         time.sleep(3)
         dl_button_xpath = "//a[contains(@class, 'download-button')]"
         dl_button = driver.find_element_by_xpath(dl_button_xpath)
         dl_button.click()
+
+    print('Dataset has finished downloading!')
 
 lazyLoadScroll()
 getListofLinks()
