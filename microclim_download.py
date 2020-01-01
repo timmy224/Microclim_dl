@@ -47,7 +47,7 @@ def auto_downloads():
     for i in links:
         print('Downloading from: ', i)
         driver.get(i)
-        time.sleep(3)
+        time.sleep(180)
         dl_button_xpath = "//a[contains(@class, 'download-button')]"
         dl_button = driver.find_element_by_xpath(dl_button_xpath)
         dl_button.click()
